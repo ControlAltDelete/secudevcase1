@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     if @posts
       flash[:success] = "Search results for #{params[:content]}"
     else
-      flash[:danger] = "No resulst found for #{params[:content]}"
+      flash[:danger] = "No results found for #{params[:content]}"
     end
   end
 

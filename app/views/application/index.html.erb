@@ -4,18 +4,20 @@
   <%= @current_user.gender %>, Born <%= @current_user.birthdate.strftime("%B %d, %Y") %><br>
   About: <%= @current_user.about %><br><br>
 
+  
   <%= form_for(@post) do |f| %>
-    <%= f.label "Post a message: " %>
     <%= f.text_area :content %>
 
     <%= f.submit "Post" %>
   <% end %><br>
-
-  Global Message Boards<br>
-
+  <center>
+  
   <%= form_tag '/search' %>
   <%= search_field_tag :content %>
   <%= submit_tag "Search" %>
+  <%= select_tag(:condition, options_for_select([['AND', 1], ['OR', 2]])) %> 
+  <%= select_tag(:search_attribute, options_for_select([['Date', 1], ['User', 2]])) %> 
+  <br><br>Global Message Boards<br>
 
   <table border="1" style="width:50%">
 
